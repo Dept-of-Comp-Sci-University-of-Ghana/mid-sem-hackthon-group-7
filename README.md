@@ -11,9 +11,10 @@ This project aims to detect potential ambiguity in financial sentences by analyz
 - **`ipython-input-24-80fb314c4322`:** Iterates through target words, checks if they are present in the tokenized sentence, and calculates the cosine similarity with relevant financial terms.
 
 ## Requirements
-
-- Python 3.x
-- Libraries: numpy, torch, transformers (install using `!pip install numpy torch transformers`)
+All requirements can be found in the requirements.txt file and can be installed using the command
+``` bash
+    pip install -r requirements.txt
+```
 
 ## Usage
 
@@ -23,3 +24,14 @@ This project aims to detect potential ambiguity in financial sentences by analyz
 4. **Analyze Similarity Scores:** Examine the calculated cosine similarity scores. High similarity between a target word and multiple financial terms from different categories may indicate potential ambiguity.
 
 ## Example
+Example sentence
+sentence = ["The bear market is affecting stocks in Helsinki."]
+
+Analyze similarity scores and flag potential ambiguities
+For instance, if "Helsinki" shows high similarity to both "market" and "stocks" terms, it might be ambiguous.
+
+## Note
+
+- The provided code snippets assume that a pre-trained language model and tokenizer are already loaded and available in the environment.
+- Further logic and thresholds can be implemented to determine the level of ambiguity based on the similarity scores.
+- This project provides a foundation for ambiguity detection and can be extended with additional features like context analysis and disambiguation techniques.
